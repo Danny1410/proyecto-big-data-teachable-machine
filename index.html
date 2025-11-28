@@ -1,16 +1,33 @@
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-<div class="container">
-    <h1>Identificador de Rostros con IA</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de Rostros - Proyecto Big Data</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
-    <div id="webcam-container"></div>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Identificador de Rostros con IA</h1>
 
-    <button onclick="init()">Iniciar Análisis</button>
+        <div id="webcam-container"></div>
 
-    <h2>Tu Tipo de Rostro Detectado:</h2>
-    <div id="label-container">-- Esperando Detección --</div>
+        <button onclick="init()">Iniciar Análisis</button>
 
-    <h3>Recomendaciones de Belleza:</h3>
-    <div id="recommendations-container"></div>
-</div>
-<script src="script.js"></script>
+        <h2>Tu Tipo de Rostro Detectado:</h2>
+        <div id="label-container">-- Esperando Detección --</div>
+
+        <h3>Recomendaciones de Belleza:</h3>
+        <div id="recommendations-container"></div>
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
