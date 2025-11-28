@@ -1,19 +1,100 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6; /* Color de fondo suave */
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+    background: linear-gradient(to right top, #f8cdda, #e9aed6, #d79fdd, #c194e4, #a78cee); /* Degradado rosa/morado */
     color: #333;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
+    min-height: 100vh; /* Para que el degradado ocupe toda la pantalla */
+    display: flex; /* Centrar el contenido verticalmente */
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
+
 .container {
-    max-width: 800px;
+    max-width: 900px; /* Ancho un poco mayor */
     margin: 0 auto;
-    padding: 30px;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+    border-radius: 15px; /* Bordes más redondeados */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borde suave */
 }
-/* Estilos para el video de la webcam y el botón */
-#webcam-container, button {
-    margin-bottom: 20px;
+
+h1 {
+    color: #a78cee; /* Color principal para el título */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
 }
+
+h2, h3 {
+    color: #e9aed6; /* Color secundario para subtítulos */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Contenedores de webcam y resultados como "tarjetas" */
+#webcam-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px auto;
+    border: 5px solid #d79fdd; /* Borde rosa para la webcam */
+    border-radius: 50%; /* Webcam circular */
+    overflow: hidden; /* Asegura que el video se adapte al círculo */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex; /* Para centrar el canvas de la webcam */
+    justify-content: center;
+    align-items: center;
+}
+
+#webcam-container canvas {
+    display: block; /* Elimina espacio extra debajo del canvas */
+    border-radius: 50%; /* Hace el canvas circular dentro del contenedor */
+}
+
+
+#label-container, #recommendations-container {
+    background-color: #f8f8f8; /* Fondo ligero para los resultados */
+    border: 1px solid #eee;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6;
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #d79fdd; /* Color rosa del botón */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px; /* Botón redondeado */
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+}
+
+button:hover {
+    background-color: #c194e4; /* Un rosa/morado un poco más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto ligero de "levantar" */
+}
+
+button:active {
+    background-color: #a78cee; /* Un rosa/morado más oscuro al hacer clic */
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Para asegurar que el video de la webcam se ajuste al contenedor */
+#webcam-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir el círculo */
+}
+
+/* Importar una fuente de Google Fonts (opcional, pero mejora el diseño) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
