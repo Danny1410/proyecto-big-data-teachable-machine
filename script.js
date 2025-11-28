@@ -1,4 +1,4 @@
-const URL = "./model/"; // Asegúrate de que esta ruta sea correcta
+const URL = "https://teachablemachine.withgoogle.com/models/ZKmGtyOhI/"; // Asegúrate de que esta ruta sea correcta
 let model, webcam, labelContainer, maxPredictions;
 
 // 1. FUNCIÓN DE INICIO (llama a todo)
@@ -72,4 +72,5 @@ function showRecommendations(faceType) {
             advice = "Acerque su rostro a la cámara para una mejor detección.";
     }
     recContainer.innerHTML = advice;
+
 }
