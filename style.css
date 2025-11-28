@@ -1,0 +1,19 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6; /* Color de fondo suave */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+/* Estilos para el video de la webcam y el botón */
+#webcam-container, button {
+    margin-bottom: 20px;
+}
