@@ -81,7 +81,7 @@ async function predict() {
 
     // Muestra el resultado principal (ej: Rostro Diamante (85%))
     labelContainer.innerHTML = `<strong>${resultClass} (${(highestProb * 100).toFixed(0)}%)</strong>`;
-
+    
     // Llama a la función de recomendaciones con el tipo de rostro más probable
     showRecommendations(resultClass);
 }
@@ -92,8 +92,11 @@ function showRecommendations(faceType) {
     const recContainer = document.getElementById("recommendations-container");
     let advice = "";
     
-    // Usamos Markdown simple para un formato limpio
-    switch(faceType) {
+    // Normalizar el nombre de la clase para asegurar la coincidencia exacta
+    const normalizedFaceType = faceType.trim(); 
+    
+    // Usamos HTML para un formato limpio
+    switch(normalizedFaceType) {
         case 'Rostro Corazón':
             advice = `
                 <p>Tu rostro es tipo **Corazón** o triángulo invertido. Se caracteriza por una frente ancha y una barbilla estrecha.</p>
@@ -137,8 +140,10 @@ function showRecommendations(faceType) {
             `;
             break;
         default:
+            // Este es el mensaje genérico que sale si la probabilidad es baja o si el nombre no coincide.
             advice = `
                 <p><strong>Ajuste no detectado:</strong> Acerque su rostro a la cámara y asegúrese de que esté bien iluminado. Si el problema persiste, verifique los permisos de la cámara en su navegador.</p>
             `;
     }
     recContainer.innerHTML = advice;
+}
